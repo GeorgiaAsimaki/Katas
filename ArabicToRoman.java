@@ -1,5 +1,6 @@
 package BerlinClock;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArabicToRoman {
@@ -60,6 +61,47 @@ public class ArabicToRoman {
                 }
             }
         return roman;
+    }
+    public ArrayList<String> arabicToRomanTests(){
+        ArrayList<String> ar = new ArrayList<String>();
+        if(convertAtoR(1000).equals("M"))
+            ar.add("1st test succeeded");
+        else
+            ar.add("1st test not succeeded");
+        if(convertAtoR(500).equals("D"))
+            ar.add("2nd test succeeded");
+        else
+            ar.add("2nd test not succeeded");
+        if(convertAtoR(100).equals("C"))
+            ar.add("3rd test succeeded");
+        else
+            ar.add("3rd test not succeeded");
+        if(convertAtoR(50).equals("L"))
+            ar.add("4th test succeeded");
+        else
+            ar.add("4th test not succeeded");
+        if(convertAtoR(10).equals("X"))
+            ar.add("5th test succeeded");
+        else
+            ar.add("5th test not succeeded");
+        if(convertAtoR(4).equals("IV"))
+            ar.add("6th test succeeded");
+        else
+            ar.add("6th test not succeeded");
+        if(convertAtoR(9).equals("IX"))
+            ar.add("7th test succeeded");
+        else
+            ar.add("7th test not succeeded");
+        if(convertAtoR(1).equals("I"))
+            ar.add("8th test succeeded");
+        else
+            ar.add("8th test not succeeded");
+        if(convertAtoR(5).equals("V"))
+            ar.add("9th test succeeded");
+        else
+            ar.add("9th test not succeeded");
+
+        return ar;
     }
 
     public Integer convertRtoA (String roman){
@@ -156,6 +198,17 @@ public class ArabicToRoman {
             arabic = Integer.valueOf(input);
             System.out.println("The roman equivalent is");
             ArabicToRoman n = new ArabicToRoman();
+            System.out.println("Test 1 for Arabic to Roman : " + n.arabicToRomanTests().get(0) );
+            System.out.println("Test 2 for Arabic to Roman : " + n.arabicToRomanTests().get(1) );
+            System.out.println("Test 3 for Arabic to Roman : " + n.arabicToRomanTests().get(2) );
+            System.out.println("Test 4 for Arabic to Roman : " + n.arabicToRomanTests().get(3) );
+            System.out.println("Test 5 for Arabic to Roman : " + n.arabicToRomanTests().get(4) );
+            System.out.println("Test 6 for Arabic to Roman : " + n.arabicToRomanTests().get(5) );
+            System.out.println("Test 7 for Arabic to Roman : " + n.arabicToRomanTests().get(6) );
+            System.out.println("Test 8 for Arabic to Roman : " + n.arabicToRomanTests().get(7) );
+            System.out.println("Test 9 for Arabic to Roman : " + n.arabicToRomanTests().get(8) );
+
+
             String roman = n.convertAtoR(arabic);
             System.out.println("The outcome is: " + roman);
         }
@@ -168,7 +221,7 @@ public class ArabicToRoman {
             System.out.println("The arabic equivalent is");
             ArabicToRoman n = new ArabicToRoman();
             Integer arabic = n.convertRtoA(roman);
-            System.out.println(arabic);
+            System.out.println("The outcome is: " + roman);
         }
 
     }
