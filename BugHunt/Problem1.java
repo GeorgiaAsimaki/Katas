@@ -1,5 +1,5 @@
 package BerlinClock.BugHunt;
-
+/*
 public class Problem1 {
 
 
@@ -22,3 +22,4 @@ public class Problem1 {
         }
     }
 }
+*/
