@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ArabicToRoman {
 
-    public String convert(Integer arabic) {
+    public String convertAtoR(Integer arabic) {
         String roman = "";
 
         while (arabic > 0)
@@ -62,17 +62,50 @@ public class ArabicToRoman {
         return roman;
     }
 
+    public Integer convertRtoA (String roman){
+        Integer arabic=0;
+        char[] chars = roman.toCharArray();
+        for (char ch: chars){
+            if(){
+
+            }
+        }
+        return arabic;
+    }
+
     public static void main(String[] args){
 
-        Integer arabic;
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter number in Arabic");
-        String input = myObj.nextLine();
-        arabic=Integer.valueOf(input);
-        System.out.println("The roman equivalent is");
-        ArabicToRoman n = new ArabicToRoman();
-        String roman = n.convert(arabic);
-        System.out.println("The outcome is: " + roman);
+        Scanner myObjChoose = new Scanner(System.in);
+        System.out.println("Enter 1 if you are going to enter arabic number or 2 for roman numerical");
+        String choose = myObjChoose.nextLine();
+        while (!(choose.equals("1") || choose.equals("2"))){
+            System.out.println("Enter only 1 or 2!");
+            choose = myObjChoose.nextLine();
+        }
+
+        if (choose.equals("1")) {
+
+            Integer arabic;
+            Scanner myObj = new Scanner(System.in);
+            System.out.println("Enter number in Arabic");
+            String input = myObj.nextLine();
+            arabic = Integer.valueOf(input);
+            System.out.println("The roman equivalent is");
+            ArabicToRoman n = new ArabicToRoman();
+            String roman = n.convertAtoR(arabic);
+            System.out.println("The outcome is: " + roman);
+        }
+        else{
+            String roman;
+            Scanner myObj2 = new Scanner(System.in);
+            System.out.println("Enter number in Arabic");
+            String input = myObj2.nextLine();
+            roman = Integer.valueOf(input);
+            System.out.println("The arabic equivalent is");
+            ArabicToRoman n = new ArabicToRoman();
+            Integer arabic = n.convertRtoA(roman);
+            System.out.println("The outcome is: " + roman);
+        }
 
     }
 }
