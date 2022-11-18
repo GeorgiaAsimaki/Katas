@@ -11,7 +11,7 @@ public class last {
                 stateSize == that.stateSize  &&
                 duration == that.duration  &&
                 alignmentBuffered == that.alignmentBuffered  &&
-                processedData == processedData  &&
+                processedData == that.processedData  &&
                 persistedData == that.persistedData  &&
                 numSubtasks == that.numSubtasks  &&
                 status == that.status  &&
