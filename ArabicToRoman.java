@@ -64,10 +64,74 @@ public class ArabicToRoman {
 
     public Integer convertRtoA (String roman){
         Integer arabic=0;
+        char prev = 'M';
         char[] chars = roman.toCharArray();
         for (char ch: chars){
-            if(){
+            if(ch=='M'){
+                if (prev=='C'){
+                    arabic = arabic + 800;
+                }
+                else {
+                    arabic = arabic + 1000;
 
+                }
+                prev = ch;
+                //System.out.println(arabic);
+            }
+            else if(ch=='D'){
+                if (prev=='C'){
+                    arabic = arabic + 300;
+                }
+                else{
+                    arabic = arabic + 500;
+                }
+                prev=ch;
+                //System.out.println(arabic);
+            }
+            else if(ch=='C'){
+                if (prev=='X'){
+                    arabic = arabic + 80;
+                }
+                else{
+                    arabic = arabic + 100;
+                }
+                prev=ch;
+                //System.out.println(arabic);
+            }
+            else if(ch=='L'){
+                if (prev=='X'){
+                    arabic = arabic + 30;
+                }
+                else{
+                    arabic = arabic + 50;
+                }
+                prev=ch;
+                //System.out.println(arabic);
+            }
+            else if(ch=='X'){
+                if (prev =='I'){
+                    arabic = arabic + 8;
+                }
+                else{
+                    arabic = arabic + 10;
+                }
+                prev=ch;
+                //System.out.println(arabic);
+            }
+            else if(ch=='V'){
+                if (prev=='I'){
+                    arabic = arabic + 3;
+                }
+                else{
+                    arabic = arabic + 5;
+                }
+                prev=ch;
+                //System.out.println(arabic);
+            }
+            else if(ch=='I'){
+                arabic = arabic + 1;
+                prev=ch;
+                //System.out.println(arabic);
             }
         }
         return arabic;
@@ -100,11 +164,11 @@ public class ArabicToRoman {
             Scanner myObj2 = new Scanner(System.in);
             System.out.println("Enter number in Arabic");
             String input = myObj2.nextLine();
-            roman = Integer.valueOf(input);
+            roman = input.toUpperCase();
             System.out.println("The arabic equivalent is");
             ArabicToRoman n = new ArabicToRoman();
             Integer arabic = n.convertRtoA(roman);
-            System.out.println("The outcome is: " + roman);
+            System.out.println(arabic);
         }
 
     }
